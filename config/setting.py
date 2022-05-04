@@ -1,0 +1,17 @@
+import os.path
+
+
+class Config():
+    # 项目路径
+    root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+    # 测试数据路径
+    data_path = os.path.join(root_path, 'data/cases.xlsx')
+
+
+class DevConfig(Config):
+    #项目的域名
+    host = 'http://127.0.0.1:8080/futureloan'
+
+
+config = DevConfig()
