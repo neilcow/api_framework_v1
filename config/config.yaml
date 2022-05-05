@@ -1,0 +1,12 @@
+# logger_name
+# logger_level
+# logger_file
+logger:
+  name: python_api
+  level: DEBUG
+  file: log_my.txt
+
+excel:
+  file: cases.xlsx
+  sheet: login
+

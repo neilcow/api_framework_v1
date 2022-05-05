@@ -8,6 +8,20 @@ class Config():
     # 测试数据路径
     data_path = os.path.join(root_path, 'data/cases.xlsx')
 
+    # 测试用例路径
+    case_path = os.path.join(root_path, 'test_cases')
+
+    # 测试报告路径
+    report_path = os.path.join(root_path, 'report')
+    if not os.path.exists(report_path):
+        os.mkdir(report_path)
+
+    # config路径
+    config_path = os.path.join(root_path, 'config')
+
+    # yaml文件路径
+    yaml_config_path = os.path.join(config_path, 'config.yaml')
+
 
 class DevConfig(Config):
     #项目的域名
