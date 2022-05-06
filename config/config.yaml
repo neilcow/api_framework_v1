@@ -3,7 +3,7 @@
 # logger_file
 logger:
   name: python_api
-  level: DEBUG
+  level: WARNING
   file: log_my.txt
 
 excel:
