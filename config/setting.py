@@ -16,11 +16,18 @@ class Config():
     if not os.path.exists(report_path):
         os.mkdir(report_path)
 
+    # 日志文件路径
+    log_path = os.path.join(root_path, 'log')
+    if not os.path.exists(log_path):
+        os.mkdir(log_path)
+
     # config路径
     config_path = os.path.join(root_path, 'config')
 
     # yaml文件路径
     yaml_config_path = os.path.join(config_path, 'config.yaml')
+
+
 
 
 class DevConfig(Config):

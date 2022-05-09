@@ -1,7 +1,7 @@
 import json
 import unittest
 
-
+from common.db_handler import DBhandler
 from common.excel_handler import ExcelHandler
 from common.helper import generate_mobile
 from common.logger_handler import LoggerHandler
@@ -29,9 +29,16 @@ class TestRegister(unittest.TestCase):
 
     def setUp(self) -> None:
         self.req = RequestHandler()
+        self.db = DBhandler(host=yaml_data['database']['host'],
+                   port=yaml_data['database']['port'],
+                   user=yaml_data['database']['user'],
+                   password=yaml_data['database']['password'],
+                   database=yaml_data['database']['database'],
+                   charset=yaml_data['database']['charset'])
 
     def tearDown(self) -> None:
         self.req.close_session()
+        self.db.close()
 
     @ddt.data(*data)
     def test_register_success(self, test_data):
