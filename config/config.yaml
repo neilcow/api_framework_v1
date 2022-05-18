@@ -17,3 +17,7 @@ database:
   password: ''
   charset: 'utf8'
   database: 'test'
+
+user:
+  name: 'test'
+  password: '123456'

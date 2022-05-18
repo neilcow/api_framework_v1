@@ -36,6 +36,7 @@ class TestRegister(unittest.TestCase):
                    database=yaml_data['database']['database'],
                    charset=yaml_data['database']['charset'])
 
+
     def tearDown(self) -> None:
         self.req.close_session()
         self.db.close()

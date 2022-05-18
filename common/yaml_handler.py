@@ -1,6 +1,8 @@
 
 import yaml
 
+from config.setting import config
+
 
 class YamlConfig(object):
     def __init__(self):
@@ -15,9 +17,12 @@ class YamlConfig(object):
             yaml.dump(wtdata, stream=f, allow_unicode=True)
 
 
+yaml_data = YamlConfig().read_yaml(config.yaml_config_path)
+print(yaml_data)
+
 if __name__ == '__main__':
     ya = YamlConfig()
-    data = (ya.read_yaml('api.yaml'))
+    data = (ya.read_yaml(config.yaml_config_path))
     print(data)
     ya.write_yaml('api111.yaml', data)
 
